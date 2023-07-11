@@ -1,6 +1,6 @@
 {
   "name": "fontend",
-  "proxy": "https://blogging-fpkd.onrender.com/",
+  "proxy": "https://blogging-fpkd.onrender.com",
   
   "version": "0.1.0",
   "private": true,
