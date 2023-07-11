@@ -34,7 +34,7 @@ const Write = () => {
       try{
         const res=await axios.post(`https://blogging-fpkd.onrender.com/api/post`,newpost)
         console.log(axios)
-       navigate("/")
+       res?.data && navigate("/")
       }catch(err){
 
       }
