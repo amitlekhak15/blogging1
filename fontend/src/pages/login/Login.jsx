@@ -12,7 +12,7 @@ const Login = () => {
   e.preventDefault()
   dispatch({type:"LOGIN START"})
   try{
-    const res=await axios.post(`/api/auth/login`,{
+    const res=await axios.post(`https://blogging-fpkd.onrender.com/api/auth/login`,{
       username:userref.current.value,
       password:passwordref.current.value
     })
