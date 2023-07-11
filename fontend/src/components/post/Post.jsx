@@ -3,7 +3,7 @@ import "./post.css"
 import {Link} from"react-router-dom"
 
 const Post = ({post}) => {
-  const pf="http://localhost:8080/images/"
+  const pf="https://blogging-fpkd.onrender.com/images/"
   return (
     <div className='post'>
       {post.photo &&(
