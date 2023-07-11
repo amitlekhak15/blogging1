@@ -8,7 +8,7 @@ import axios from 'axios'
 
 
 const Settings = () => {
-  const pf="http://localhost:8080/images/"
+  const pf="https://blogging-fpkd.onrender.com/images/"
   const{user,dispatch}=useContext(Context)
   const[file,setfile]=useState(null)
   const[username,setusername]=useState("")
@@ -33,14 +33,14 @@ const Settings = () => {
         data.append("file",file)
         updateduser.profilePic=filename
         try{
-          await axios.post("/api/upload",data)
+          await axios.post("https://blogging-fpkd.onrender.com/api/upload",data)
 
         }catch(err){
 
         }
       }
       try{
-        const res=await axios.put(`/api/user/${user._id}`,updateduser)
+        const res=await axios.put(`https://blogging-fpkd.onrender.com/api/user/${user._id}`,updateduser)
         setsuccess(true)
         dispatch({type:"UPDATE_SUCCESS",payload:res.data})
         console.log(axios)
@@ -53,7 +53,7 @@ const Settings = () => {
   }
   const handledelete=async()=>{
     try{
-      const res=await axios.delete(`/api/user/${user._id}`,{
+      const res=await axios.delete(`https://blogging-fpkd.onrender.com/api/user/${user._id}`,{
         data:{userid:user._id}
       })
       if(res.data){
