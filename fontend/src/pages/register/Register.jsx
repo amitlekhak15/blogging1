@@ -2,9 +2,12 @@ import React,{useState} from 'react'
 import "./register.css"
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+
 
 
 const Register = () => {
+  const navigate=useNavigate()
   const[username,setusername]=useState("")
   const[email,setemail]=useState("")
   const[password,setpassword]=useState("")
@@ -16,7 +19,7 @@ const Register = () => {
       const {data}=await axios.post(` https://blogging-fpkd.onrender.com/api/auth/register`,{
         username,email,password
       })
-      data.success&&window.location.replace(" https://64ad6e4e0d22f006293c4b7b--blogifyer.netlify.app/login")
+      data.success&& navigate("/login")
     }catch(err){
 seterr(err)
     }
