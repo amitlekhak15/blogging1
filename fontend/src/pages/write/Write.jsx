@@ -2,8 +2,10 @@ import React, { useContext, useState } from 'react'
 import "./write.css"
 import { Context} from"../../context/Context"
 import axios from "axios"
+import { useNavigate } from 'react-router-dom';
 
 const Write = () => {
+  const navigate=useNavigate()
   const [title,settitle]=useState("")
   const [desc,setdesc]=useState("")
   const[file,setfile]=useState(null)
@@ -32,7 +34,7 @@ const Write = () => {
       try{
         const res=await axios.post(`https://blogging-fpkd.onrender.com/api/post`,newpost)
         console.log(axios)
-        window.location.replace("https://64ad6e4e0d22f006293c4b7b--blogifyer.netlify.app//post/"+ res.data._id)
+       navigate("/")
       }catch(err){
 
       }
