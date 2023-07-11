@@ -6,7 +6,7 @@ import {Link} from "react-router-dom"
 import { useContext } from 'react'
 import { Context } from '../../context/Context'
 const Singlepost = () => {
-  const pf="http://localhost:8080/images/"
+  const pf="https://blogging-fpkd.onrender.com/images/"
   const location=useLocation()
   const path=location.pathname.split("/")[2]
   const[post,setpost]=useState({})
@@ -16,7 +16,7 @@ const Singlepost = () => {
   const[updatemode,setupdatemode]=useState(false)
   useEffect(() => {
     const getpost=async()=>{
-      const res=await axios.get(`/api/post/${path}`)
+      const res=await axios.get(`https://blogging-fpkd.onrender.com/api/post/${path}`)
       setpost(res.data)
       settitle(res.data.title)
       setdesc(res.data.desc)
@@ -27,7 +27,7 @@ const Singlepost = () => {
   //delete
   const handledelete=async()=>{
     try{
-      await axios.delete(`/api/post/${path}`,{
+      await axios.delete(`https://blogging-fpkd.onrender.com/api/post/${path}`,{
       data:{username:user.username}})
       window.location.replace("/")
       
@@ -40,7 +40,7 @@ const Singlepost = () => {
   //handleupdate
   const handleupdate=async()=>{
     try{
-      await axios.put(`/api/post/${path}`,{
+      await axios.put(`https://blogging-fpkd.onrender.com/api/post/${path}`,{
       username:user.username,title,desc
     })
     setupdatemode(false)
