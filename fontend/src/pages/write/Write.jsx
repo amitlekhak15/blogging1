@@ -23,14 +23,14 @@ const Write = () => {
         data.append("file",file)
         newpost.photo=filename
         try{
-          await axios.post("/api/upload",data)
+          await axios.post("https://blogging-fpkd.onrender.com/api/upload",data)
 
         }catch(err){
 
         }
       }
       try{
-        const res=await axios.post(`/api/post`,newpost)
+        const res=await axios.post(`https://blogging-fpkd.onrender.com/api/post`,newpost)
         console.log(axios)
         window.location.replace("/post/"+ res.data._id)
       }catch(err){
