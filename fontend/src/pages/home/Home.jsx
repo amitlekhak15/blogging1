@@ -11,7 +11,7 @@ const Home = () => {
   const {search} =  useLocation()
   useEffect(() => {
     const fetchpost=async()=>{
-     const res= await axios.get("/api/post" +search)
+     const res= await axios.get("https://blogging-fpkd.onrender.com/api/post" +search)
      setposts(res.data)
     }
     fetchpost()
