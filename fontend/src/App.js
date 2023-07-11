@@ -5,7 +5,7 @@ import Write from "./pages/write/Write";
 import Settings from "./pages/settings/Settings";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import {  Routes, Route} from 'react-router-dom';
 import { useContext } from "react";
 import { Context } from "./context/Context";
 
