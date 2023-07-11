@@ -32,7 +32,7 @@ const Write = () => {
       try{
         const res=await axios.post(`https://blogging-fpkd.onrender.com/api/post`,newpost)
         console.log(axios)
-        window.location.replace("/post/"+ res.data._id)
+        window.location.replace("https://64ad6e4e0d22f006293c4b7b--blogifyer.netlify.app//post/"+ res.data._id)
       }catch(err){
 
       }
