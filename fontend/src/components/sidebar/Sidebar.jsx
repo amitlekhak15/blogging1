@@ -7,7 +7,7 @@ const Sidebar = () => {
     const[cats,setcat]=useState([])
     useEffect(() => {
       const setcats=async ()=>{
-        const res=await axios.get(`/api/category`)
+        const res=await axios.get(`https://blogging-fpkd.onrender.com/api/category`)
         setcat(res.data)
 
       }
