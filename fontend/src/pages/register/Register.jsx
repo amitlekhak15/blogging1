@@ -13,7 +13,7 @@ const Register = () => {
     e.preventDefault()
     seterr(false)
     try{
-      const {data}=await axios.post(`/api/auth/register`,{
+      const {data}=await axios.post(` https://blogging-fpkd.onrender.com/api/auth/register`,{
         username,email,password
       })
       data.success&&window.location.replace("/login")
