@@ -5,6 +5,7 @@ import axios from 'axios'
 import {Link} from "react-router-dom"
 import { useContext } from 'react'
 import { Context } from '../../context/Context'
+import { useNavigate } from 'react-router-dom';
 const Singlepost = () => {
   const pf="https://blogging-fpkd.onrender.com/images/"
   const location=useLocation()
@@ -44,7 +45,7 @@ const Singlepost = () => {
       username:user.username,title,desc
     })
     setupdatemode(false)
-      window.location.reload()
+      navigate("/")
       
     }catch(err){
 
