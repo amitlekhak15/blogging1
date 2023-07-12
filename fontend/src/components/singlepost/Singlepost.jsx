@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 const Singlepost = () => {
   const pf="https://blogging-fpkd.onrender.com/images/"
   const location=useLocation()
+  const navigate=useNavigate()
   const path=location.pathname.split("/")[2]
   const[post,setpost]=useState({})
   const{user}=useContext(Context)
