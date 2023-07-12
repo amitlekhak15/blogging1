@@ -2,9 +2,11 @@ import React, { useContext, useState } from 'react'
 import "./write.css"
 import { Context} from"../../context/Context"
 import axios from "axios"
+import { useNavigate} from 'react-router-dom';
 
 
 const Write = () => {
+  const navigate=useNavigate()
   
   const [title,settitle]=useState("")
   const [desc,setdesc]=useState("")
@@ -32,9 +34,9 @@ const Write = () => {
         }
       }
       try{
-        const res=await axios.post(`https://blogging-fpkd.onrender.com/api/post`,newpost)
-        console.log(axios)
-      window.location.replace("/post/"+ res.data._id)
+        await axios.post(`https://blogging-fpkd.onrender.com/api/post`,newpost)
+        navigate("/")
+      
       }catch(err){
 
       }
